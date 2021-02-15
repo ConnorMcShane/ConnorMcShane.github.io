@@ -256,3 +256,10 @@
 		}
 
 })(jQuery);
+
+$(function() {
+    $("navbar").load("reusable_html/navbar.html");
+    $("reusable_footer").load("reusable_html/footer.html");
+	$("navbar_nested").load("../reusable_html/navbar.html");
+    $("reusable_footer_nested").load("../reusable_html/footer.html");
+  });
