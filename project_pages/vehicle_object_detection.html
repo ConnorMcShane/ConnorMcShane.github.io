@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Connor McShane</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header"></header>
+
+				<!-- Nav -->
+				<navbar_nested></navbar_nested>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Vehicle Object Detection <br> Aerial View Point</h1>
+								</header>
+								<p>
+									In this project I develop a non-axis aligned 2D bounding box object detection algorithm based on the EfficientDet architecture (currently state of the art in 2020). See below the architecture diagram for efficientDet and it's performance against competitor models.
+								</p>
+								<div class="image main"><img src="/images/efficientDet_architecture.png" alt="" /></div>
+								<div class="image main"><img src="/images/efficientDet_performance.png" alt="" /></div>
+								<p>
+									<br><br>To begin with I hand labelled data with rotated bounding boxes using this <a href="https://github.com/cgvict/roLabelImg">tool</a>.
+								</p>
+								<div class="image main"><img src="/images/roLabelImg.png" alt="" /></div>
+								<p>
+									I then created an EfficientDet model and loaded weights pre-trained on Imagenet. I used <a href="https://github.com/xuannianz/EfficientDet">this</a> implementation of the EfficientDet architecture.
+								</p>
+								<script src="https://gist.github.com/ConnorMcShane/36a9d8298f3987a060708f4a7c4568fb.js"></script>
+								<p>
+									See below the tensorboard loss curve for training.
+								</p>
+								<div class="image main"><img src="/images/efficientDet_architecture.png" alt="" /></div>
+								<p>
+									See below the output video on data never seen before by the algorithm during training.
+								</p>
+								<body>
+									<div class="container">
+									<iframe src="https://www.youtube.com/embed/60UTZ--HLQE" 
+									frameborder="0" allowfullscreen class="video"></iframe>
+									</div>
+								</body>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<reusable_footer_nested></reusable_footer_nested>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+	</body>
+</html>
