@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Connor McShane</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header"></header>
+
+				<!-- Nav -->
+				<navbar_nested></navbar_nested>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Snapchat Style </br>Face Filters</h1>
+								</header>
+								<p>
+									This project builds snapchat style filters using dlibs 68 point face landmark tracker. The opencv perspective trasnform feature is used to give the filters a slightly 3D look.
+								</p>
+								<div class="image main"><img src="/images/facial_landmarks.jpg" alt=""/></div>
+								<p>
+									<br><br>To begin with I installed dlib and downloaded the 68 point landmerk face detection model 
+									<a href="https://github.com/italojs/facial-landmarks-recognition-/blob/master/shape_predictor_68_face_landmarks.dat">here</a>.
+									I then recorded a quick selfie video and detected the 68 points on my face and visualised them using opencv. 
+									I also estimate the pitch and yaw of my head using the distance from the center point of my nose to the edges of my face. See pitch and yaw calculations below and the resulting output:
+								</p>
+								<script src="https://gist.github.com/ConnorMcShane/6ec50119e0877d5ef1e0866e9da2e17c.js"></script>
+								<div class="image main"><img src="/images/face_tracking.gif" alt="" /></div>
+								<p>
+									I then created a class to represent the props that can be applied to the face detections. This general prop class can be use for different filters such as glasses, hats, mustaches ect. 
+									This class will load a transparent background png image on initialisation. The apply_prop method will add this image to faces in the scene and perform a perspective
+									 transform on them depending on the head angle. See the code for the class below:
+								</p>
+								<script src="https://gist.github.com/ConnorMcShane/22c27501daaccc0cadb37cfe37034a03.js"></script>
+								<p>
+									See below the resulting filters applied to my face. The selfie video and transparent png files can be easily swapped out for any prop you like:
+								</p>
+								<div class="image main"><img src="/images/face_filters.gif" alt="" /></div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<reusable_footer_nested></reusable_footer_nested>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+	</body>
+</html>
